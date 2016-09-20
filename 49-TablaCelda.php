@@ -4,6 +4,7 @@
 </head>
 <body>
 <?php
+require '48-Celda.php';
 class Tabla {
   private $mat = array();
   private $cantFilas;
@@ -18,21 +19,20 @@ class Tabla {
     return  $this->cantColumnas;
   }
 
-  public function __construct($fi,$co, $color)
+  public function __construct($fi,$co)
   {
     $this->cantFilas=$fi;
     $this->cantColumnas=$co;
-    $this->color = $color;
   }
 
-  public function cargar($fila,$columna,$valor)
+  public function cargar($fila,$columna,$valor, $colorTexto, $colorFondo)
   {
-    $this->mat[$fila][$columna]=$valor;
+    $this->mat[$fila][$columna]=new Celda($valor, $colorTexto, $colorFondo);
   }
 
   private function inicioTabla()
   {
-    echo '<table style="color:'.$this->color.'"  border="1">';
+    echo '<table>';
   }
     
   private function inicioFila()
@@ -42,7 +42,7 @@ class Tabla {
 
   private function mostrar($fi,$co)
   {
-    echo '<td>'.$this->mat[$fi][$co].'</td>';
+    echo '<td>'.$this->mat[$fi][$co]->graficar().'</td>';
   }
 
   private function finFila()
@@ -75,11 +75,13 @@ $secuencia = 5;
 $incremento = 3;
 $filas = 16;
 $columnas = 15;
-$color = 'blue';
-$tabla1=new Tabla($filas,$columnas, $color);
+$color = 'black';
+$colorFondo = 'cyan';
+$arrColoresFondo = array('maroon', 'green', 'brown', 'magento', 'blue', 'red');
+$tabla1=new Tabla($filas,$columnas);
 for ($i=1; $i <= $filas ; $i++) { 
-  for ($j=1; $j <= $columnas; $j++) { 
-    $tabla1->cargar($i,$j,$secuencia);
+  for ($j=1; $j <= $columnas; $j++) {
+    $tabla1->cargar($i,$j,$secuencia, $color, $arrColoresFondo[mt_rand(0, count($arrColoresFondo)-1)]);
     //$secuencia = $secuencia + $incremento;
     $secuencia += $incremento;
   }
