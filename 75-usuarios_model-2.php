@@ -16,15 +16,16 @@ class Usuario extends DBAbstractModel {
 		 FROM usuarios
 		 WHERE email = '$user_email'
 		 ";
-		 //echo $this->query;
+		 echo $this->query;
 		 $this->get_results_from_query();
 	 endif;
-	 if(count($this->rows) == 1):
+	// if(count($this->rows) == 1):
 		 foreach ($this->rows[0] as $propiedad=>$valor):
 		 	$this->$propiedad = $valor;
 		 endforeach;
-	 endif;
+	// endif;
  }
+
  public function set($user_data=array()) {
 	 if(array_key_exists('email', $user_data)):
 	 $this->get($user_data['email']);
@@ -42,6 +43,7 @@ class Usuario extends DBAbstractModel {
 		 endif;
 	 endif;
  }
+
 public function edit($user_data=array()) {
 	foreach ($user_data as $campo=>$valor):
 		$$campo = $valor;
@@ -55,6 +57,7 @@ public function edit($user_data=array()) {
 	";
 	$this->execute_single_query();
 }
+
  public function delete($user_email='') {
 	 $this->query = "
 	 DELETE FROM usuarios
@@ -62,8 +65,10 @@ public function edit($user_data=array()) {
 	 ";
 	 $this->execute_single_query();
  }
+
  function __destruct() {
  	unset($this);
  }
+
 }
 ?>
