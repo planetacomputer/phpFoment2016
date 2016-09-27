@@ -2,7 +2,7 @@
 require_once('75-usuarios_model-2.php');
 # Traer los datos de un usuario
 $usuario1 = new Usuario();
-$usuario1->get('user@mail.com');
+$usuario1->get('jacin@mail.com');
 print $usuario1->nombre . ' ' . $usuario1->apellido . ' existe<br>';
 /*
 # Crear un nuevo usuario

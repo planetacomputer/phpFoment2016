@@ -16,14 +16,14 @@ class Usuario extends DBAbstractModel {
 		 FROM usuarios
 		 WHERE email = '$user_email'
 		 ";
-		 echo $this->query;
+		 //echo $this->query;
 		 $this->get_results_from_query();
 	 endif;
-	// if(count($this->rows) == 1):
+	 if(count($this->rows) == 1):
 		 foreach ($this->rows[0] as $propiedad=>$valor):
 		 	$this->$propiedad = $valor;
 		 endforeach;
-	// endif;
+	 endif;
  }
 
  public function set($user_data=array()) {
