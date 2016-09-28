@@ -13,6 +13,10 @@ class Usuario extends DBAbstractModel {
  	$this->db_name = 'book_example';
  }
 
+ public function getRows(){
+ 	return $this->rows;
+ }
+
  public function get($user_email='') {
 	 if($user_email != ''):
 		 $this->query = "
