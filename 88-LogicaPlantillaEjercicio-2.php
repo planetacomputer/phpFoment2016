@@ -7,7 +7,8 @@ $usuario1->get($email);
 //print_r($usuario1->getRows());
 
 $template = file_get_contents('87-PlantillaVistaEjercicio-1.tpl');
-foreach ($usuario1->getRows()[0] as $clave=>$valor) {
+$diccionario = $usuario1->getRows()[0]; 
+foreach ($diccionario as $clave=>$valor) {
 	$template = str_replace('{'.$clave.'}', $valor, $template);
 }
 print $template;

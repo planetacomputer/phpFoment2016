@@ -16,6 +16,10 @@ abstract class Trabajador {
   {
     return $this->sueldo;
   }
+
+  public static function hola(){
+    echo "holaTrabajador";
+  }
 } 
 
 class Empleado extends Trabajador {
@@ -23,6 +27,9 @@ class Empleado extends Trabajador {
   public function __construct($nom,$sue){
     parent::__construct();
     self::$numEmpl+=1;
+  }
+  public static function hola(){
+    echo "holaEmpleado";
   }
 }
 
@@ -52,6 +59,9 @@ for($f=0;$f<count($vec);$f++)
 }
 echo 'Gastos en sueldos de '.Empleado::$numEmpl.' Empleados:<br>';
 echo 'Gastos en sueldos de  '.Gerente::$numGere.' Gerentes:<br>';
+
+echo Trabajador::hola();
+echo Empleado::hola();
 ?>
 </body>
-</html> 
+</html>
