@@ -3,7 +3,7 @@
 	# controladores
 	const SET_USER = 'set';
 	const GET_USER = 'get';
-	const GET_ALL_USER = 'list';
+	const GET_ALL_USER = 'listar';
 	const DELETE_USER = 'delete';
 	const EDIT_USER = 'edit';
 

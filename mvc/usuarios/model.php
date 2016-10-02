@@ -34,7 +34,7 @@ class Usuario extends DBAbstractModel {
 	public function getAll(){
 		$this->query = "SELECT * FROM usuarios";
 		$this->get_results_from_query();
-		//print_r($this->rows[0]);
+		//print_r($this->rows);
 	}
 	
 	# Crear un nuevo usuario

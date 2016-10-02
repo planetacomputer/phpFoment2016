@@ -34,7 +34,6 @@ function handler() {
 		retornar_vista(VIEW_EDIT_USER, $data);
 		break;
 	case GET_ALL_USER:
-		echo "getalluser";
 		$usuario->getAll();
 		retornar_vista(VIEW_ALL_USER, $usuario->getRows());
 		break;
