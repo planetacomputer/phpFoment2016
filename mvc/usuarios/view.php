@@ -46,9 +46,10 @@ function retornar_vista($vista, $data=array()) {
 
 	//Si la vista el LISTAR iterara el array de resultados
 	if($vista == 'listar'){
+		//print_r($data);
 		for ($i=0; $i < count($data); $i++) {
 			foreach ($data[$i] as $key => $value) {
-				$listado .= ucfirst($key).": ".$value."<br>";
+				$listado .= "<b>".ucfirst($key)."</b>: ".$value."<br>";
 			}
 			$listado .= "<br>";			
 		}
