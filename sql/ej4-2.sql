@@ -1,0 +1,20 @@
+INSERT INTO T_EMPLOYEES(
+  `OFFC_ID`,
+  `KNLN_ID`,
+  `EMPL_FORNAME`,
+  `EMPL_MIDDLE_NAME`,
+  `EMPL_SURNAME`,
+  `EMPL_NUMBER`,
+  `EMPL_HIRE_DATE`,
+  `EMPL_MENTOR_ID`
+)
+VALUES(
+	20,
+    NULL,
+    'Jose',
+    'Pepe',
+    'Pages',
+    '111',
+    '2012-09-09',
+    NULL
+);
