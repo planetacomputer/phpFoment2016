@@ -9,7 +9,7 @@ function set_identificadores($vista) {
 		$identificadores = array('propiedad');
 		break;
 		case 'vista_2':
-		$identificadores = array('propiedad_1', 'propiedad_2');
+		$identificadores = array('propiedad_1', 'propiedad_2', 'propiedad_3');
 		break;
 		}
 		return $identificadores;
@@ -33,6 +33,7 @@ function render_data($vista, $data) {
 	$html = '';
 	if(($vista)&&($data)) {
 		$diccionario = armar_diccionario($vista, $data);
+		print_r($diccionario);
 		if($diccionario) {
 			$html = file_get_contents('html/'.$vista.'.html');
 			foreach ($diccionario as $clave=>$valor) {

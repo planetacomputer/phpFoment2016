@@ -2,14 +2,19 @@
 
 enviar_data();
 
+//Mètode central frontcontroller que rep les peticions
 function enviar_data() {
+	//Identifica per la URL l'accio
 	$vista = capturar_evento();
 	if($vista) {
+		//Saber si ha d'instanciar el ModeloUno o ModeloDos
 		$modelo = identificar_modelo($vista);
 		if($modelo) {
+			//Instancia el model corresponent
 			$data = invocar_modelo($modelo);
 			if($data) {
 				require_once('view.php');
+				//Crida la logica de la vista
 				render_data($vista, $data);
 			}
 		}
